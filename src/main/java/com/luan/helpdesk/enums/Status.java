@@ -2,7 +2,7 @@ package com.luan.helpdesk.enums;
 
 public enum Status {
 
-    ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), ENCERRADO(2, "ENCERRADO");
+    ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), FECHADO(2, "FECHADO");
 
     private Integer codigo;
     private  String descricao;
