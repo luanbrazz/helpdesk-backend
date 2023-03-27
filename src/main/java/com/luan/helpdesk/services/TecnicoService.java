@@ -1,6 +1,7 @@
 package com.luan.helpdesk.services;
 
 import com.luan.helpdesk.domain.Tecnico;
+import com.luan.helpdesk.domain.dtos.TecnicoDTO;
 import com.luan.helpdesk.repositories.TecnicoRepository;
 import com.luan.helpdesk.services.exceptions.ObjectnotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,11 @@ public class TecnicoService {
 
     public List<Tecnico> findAll() {
         return repository.findAll();
+    }
+
+    public Tecnico create(TecnicoDTO objDTO) {
+        objDTO.setId(null);
+        Tecnico newObj = new Tecnico(objDTO);
+        return repository.save(newObj);
     }
 }
